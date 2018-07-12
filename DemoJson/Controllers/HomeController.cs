@@ -28,9 +28,9 @@ namespace DemoJson.Controllers
                 foreach (var p in props)
                 {
                     var v = p.Value as JObject;
-                    sb.AppendFormat("{0},{1}", 
-                    p.Name.Replace("/thaiwater30/api_service?mid=",""), 
-                    v["get"]["description"]);
+                    sb.AppendFormat("\"{0}\",\"{1}\"", 
+                    p.Name.Replace("/thaiwater30/api_service?mid=","").Trim(), 
+                    v["get"]["description"].ToString().Trim());
                     sb.AppendLine();
 
                     // if (++cnt > 9)
